@@ -1,0 +1,62 @@
+<!doctype html> 
+<html lang="ru"> 
+    <head> 
+        <meta charset="utf-8"> 
+        <!-- Адаптация под мобильные приложения --> 
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <!-- Bootstrap CSS --> 
+        <link href="css/bootstrap.min.css" rel="stylesheet"> 
+        <script src="myjs/ajax.js"></script>  
+        <title>Шаблонизатор Bootstrap 5</title> 
+    </head> 
+    <body> 
+    <!-- Глобальный контейнер Bootstrap --> 
+    <div class="container">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Главная</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Пример 1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Пример 2</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Пример 3</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Закртыто</a>
+            </li>
+        </ul>
+    
+    <!-- Контент (представление) --> 
+        <div class="tab-pane" id="content"> 
+            <p class="text-success">Фреймворк Bootstrap 5!</p><img class="img-fluid"  
+            src="img/bootstrap.png"> 
+        </div> 
+    <!-- Сообщение во время загрузки -->                                              
+        <div id="loading" style="display: none"> Идет загрузка..</div>
+   
+    <!-- Приклееный подвал --> 
+        <footer class="mt-auto"> 
+        &copy; Колледж АлтГУ - 2025 
+        </footer> 
+    <!-- Bootstrap JS --> 
+    <script src="js/bootstrap.min.js"></script> 
+    </body> 
+    </html> 
+    <script>
+        document.querySelector('.nav').addEventListener('click', function(event) {
+            if(event.target.nodeName != 'A') return 0;
+            switch(event.target.innerHTML) {
+                case "Пример 1": linkcontent('view/01.html');
+                break;
+                case "Пример 2": linkcontent('view/02.html');
+                break;
+                case "Пример 3": lickcontent('view/03.html');
+                break;
+                default: linkcontent('view/0.html')
+            }
+        })
+    </script>
